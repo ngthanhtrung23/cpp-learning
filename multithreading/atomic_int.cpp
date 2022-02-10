@@ -27,6 +27,6 @@ int main(int argc, char** argv) {
         t.join();
     }
 
-    // will be < N because of race condition
+    // will be == N since we use atomic<int>
     std::cout << "x = " << x << std::endl;
 }

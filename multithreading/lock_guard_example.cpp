@@ -29,6 +29,6 @@ int main(int argc, char** argv) {
         t.join();
     }
 
-    // will be < N because of race condition
+    // will be == N since we use lock_guard
     std::cout << "x = " << x << std::endl;
 }
