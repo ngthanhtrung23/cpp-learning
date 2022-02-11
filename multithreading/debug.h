@@ -1,3 +1,5 @@
+#ifndef DEBUG_H
+#define DEBUG_H
 #include <iostream>
 using namespace std;
 
@@ -31,3 +33,4 @@ template<size_t i, class T> ostream& print_tuple_utils(ostream& out, const T& tu
 template<class ...U> ostream& operator << (ostream& out, const tuple<U...>& t) {
     return print_tuple_utils<0, tuple<U...>>(out, t);
 }
+#endif
