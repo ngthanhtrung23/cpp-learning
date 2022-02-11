@@ -3,7 +3,7 @@
 #include <vector>
 #include <cassert>
 #include <atomic>
-#include "debug.h"
+#include "../debug.h"
 
 int main(int argc, char** argv) {
     assert(argc == 2);

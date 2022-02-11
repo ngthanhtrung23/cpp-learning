@@ -5,7 +5,7 @@
 #include <condition_variable>
 #include <functional>
 #include "thread_safe_queue.hpp"
-#include "debug.h"
+#include "../debug.h"
 
 using Job = std::function<void()>;
 class ThreadPool {

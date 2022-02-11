@@ -1,5 +1,5 @@
 #include "thread_safe_queue.hpp"
-#include "debug.h"
+#include "../debug.h"
 
 int main(int argc, char** argv) {
     assert(argc == 2);

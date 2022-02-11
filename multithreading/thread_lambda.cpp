@@ -2,7 +2,7 @@
 #include <thread>
 #include <vector>
 #include <cassert>
-#include "debug.h"
+#include "../debug.h"
 
 int main(int argc, char** argv) {
     assert(argc == 2);
