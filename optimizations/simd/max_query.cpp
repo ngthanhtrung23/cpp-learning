@@ -43,7 +43,8 @@ namespace IO {
 const int MN = 100111;
 const int INF = 1000111000;
 
-int a[MN];
+// align as 32 bytes
+alignas(32) int a[MN];
 int res[8], inf[8];
 
 int main() {

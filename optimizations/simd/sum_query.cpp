@@ -42,7 +42,8 @@ namespace IO {
 
 const int MN = 100111;
 
-long long a[MN];
+// alignas 32-bytes.
+alignas(32) long long a[MN];
 long long res[4];
 
 int main() {

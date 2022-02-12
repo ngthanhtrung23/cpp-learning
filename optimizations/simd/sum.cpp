@@ -12,7 +12,8 @@ const int N_TURNS = 1e5;
 
 int main() {
     const int N = 1e5;
-    int a[N];
+    // Align as 32-bytes
+    alignas(32) int a[N];
 
     int sum = 0;
     for (int turn = 0; turn < N_TURNS; turn++) {
