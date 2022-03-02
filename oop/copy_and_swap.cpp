@@ -13,7 +13,9 @@ public:
     }
 
     // copy assignment operator, copy and swap idiom
-    // Note that other is passed by value
+    // Notes:
+    // - other is passed by value
+    // - fixes self-assignment, and also assignment of recursive DS
     DumbArray& operator = (DumbArray other) {
         swap(*this, other);
         return *this;
@@ -34,6 +36,10 @@ public:
     void swap(DumbArray& a, DumbArray& b) {
         std::swap(a.sz, b.sz);
         std::swap(a.arr, b.arr);
+    }
+
+    ~DumbArray() {
+        delete [] arr;
     }
 
 private:
