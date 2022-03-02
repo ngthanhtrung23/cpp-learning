@@ -15,6 +15,7 @@ public:
     // copy assignment operator, copy and swap idiom
     // Notes:
     // - other is passed by value
+    // - no longer needs move assignment operator
     // - fixes self-assignment, and also assignment of recursive DS
     DumbArray& operator = (DumbArray other) {
         swap(*this, other);
@@ -26,11 +27,13 @@ public:
         swap(*this, other);
     }
 
-    // move assignment
+    // move assignment - not needed because we use pass-by-value assignment operator
+    /*
     DumbArray& operator = (DumbArray&& other) {
         swap(*this, other);
         return *this;
     }
+    */
 
     // for copy and swap
     void swap(DumbArray& a, DumbArray& b) {
