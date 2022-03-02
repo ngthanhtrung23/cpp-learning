@@ -36,7 +36,7 @@ public:
     */
 
     // for copy and swap
-    void swap(DumbArray& a, DumbArray& b) {
+    friend void swap(DumbArray& a, DumbArray& b) {
         std::swap(a.sz, b.sz);
         std::swap(a.arr, b.arr);
     }
