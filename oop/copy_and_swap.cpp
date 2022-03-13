@@ -27,6 +27,14 @@ public:
         swap(*this, other);
     }
 
+    /**
+     * How to write move constructor without copy and swap?
+     * We need to clean up other, otherwise will have double-free
+    DumbArray(DumbArray&& other) noexcept
+        : sz(std::move(other.sze)),
+          arr(std::exchange(other.arr, nullptr)) {}
+     */
+
     // move assignment - not needed because we use pass-by-value assignment operator
     /*
     DumbArray& operator = (DumbArray&& other) {
