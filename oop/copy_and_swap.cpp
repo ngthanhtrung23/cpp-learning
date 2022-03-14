@@ -17,13 +17,13 @@ public:
     // - other is passed by value
     // - no longer needs move assignment operator
     // - fixes self-assignment, and also assignment of recursive DS
-    DumbArray& operator = (DumbArray other) {
+    DumbArray& operator = (DumbArray other) noexcept {
         swap(*this, other);
         return *this;
     }
 
     // move constructor, copy and swap idiom
-    DumbArray(DumbArray&& other) : DumbArray() {
+    DumbArray(DumbArray&& other) noexcept : DumbArray() {
         swap(*this, other);
     }
 
@@ -44,12 +44,12 @@ public:
     */
 
     // for copy and swap
-    friend void swap(DumbArray& a, DumbArray& b) {
+    friend void swap(DumbArray& a, DumbArray& b) noexcept {
         std::swap(a.sz, b.sz);
         std::swap(a.arr, b.arr);
     }
 
-    ~DumbArray() {
+    ~DumbArray() noexcept {
         delete [] arr;
     }
 
